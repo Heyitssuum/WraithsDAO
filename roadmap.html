@@ -67,7 +67,7 @@
         content: "";
         width: 2px;
         height: 100%;
-        background-color: white;
+        background-color: #2e2e2e;
         left: 50%;
         top: 0;
         -webkit-transform: translateX(-50%);
@@ -81,7 +81,7 @@
       .timeline_content {
         background-color:#040404;
         border-radius: 10px;
-        box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+        
       }
 
       ul.timeline-list li .timeline_content {
@@ -111,6 +111,18 @@
         -webkit-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
         border-radius: 50%;
+      }
+
+      ul.timeline-list li.incoming:before {
+        background-color: #2e2e2e !important;
+      }
+
+      ul.timeline-list li.ongoing .timeline_content {
+          box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+      }
+
+      ul.timeline-list li.incoming .timeline_content {
+          opacity:0.5;
       }
 
     </style>
@@ -146,41 +158,50 @@
             <div class="row">
               <div class="col-xl-12">
                 <ul class="timeline-list">
+                  
                     <!-- Single Experience -->
                     <li>
-                      <div class="timeline_content shadow-lg" style="opacity:0.5;">
-                          <h4>Era I Drop <span class="badge bg-dark" style="font-weight: 400;">completed</span></h4>
+                      <div class="timeline_content shadow-lg">
+                          <h4><del>Era I Drop</del> <span class="badge bg-dark" style="font-weight: 400;">completed</span></h4>
                           <p>Era I is the genesis Wraiths drop of the DAO. It includes 4 original Wraiths (1x Executioner, 1x Necromancer, 1x Occultist, and 1x Dark Knight).</p>
                       </div>
                     </li>
                     <!-- Single Experience -->
-                    <li>
+                    <li class="ongoing">
                       <div class="timeline_content">
                           <h4>Era II Drop <span class="badge bg-light text-dark" style="font-weight: 400;">Ongoing</span></h4>
                           <p>Era II is the second Wraiths drop of the DAO. It includes 8 original Wraiths (2x Executioner, 2x Necromancer, 2x Occultist, and 2x Dark Knight).</p>
                       </div>
                     </li>
                     <!-- Single Experience -->
-                    <li>
+                    <li class="incoming">
                       <div class="timeline_content">
                           <h4>MetaDex premium airdrop <span class="badge bg-dark" style="font-weight: 400;">Incoming</span></h4>
                           <p>A MetaDex pass will be airdropped to all Era I and Era II Wraiths holders. This pass gives access to all premiums features on MetaDex.</p>
                       </div>
                     </li>
                     <!-- Single Experience -->
-                    <li>
+                    <li class="incoming">
                       <div class="timeline_content">
                           <h4>Era III Drop <span class="badge bg-dark" style="font-weight: 400;">Incoming</span></h4>
                           <p>Era III is the third Wraiths drop of the DAO. It includes 8 original Wraiths (3x Executioner, 3x Necromancer, 3x Occultist, and 3x Dark Knight).</p>
                       </div>
                     </li>
                     <!-- Single Experience -->
-                    <li>
+                    <li class="incoming">
                       <div class="timeline_content">
                           <h4>Ethereal Sea Project <span class="badge bg-dark" style="font-weight: 400;">Incoming</span></h4>
                           <p>Built on top of the Wraiths NFTs (layer 1), Ethereal Sea integrates GameFi and DeFi mechanics. More information about this project will be released after the Era III Drop.</p>
                       </div>
                     </li>
+                    <div style="position: absolute;
+                  width: 2px;
+                  height: 29%;
+                  background-color: white;
+                  left: 50%;
+                  top: 0;
+                  -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%);"></div>
                 </ul>
               </div>
           </div>
