@@ -203,8 +203,4 @@ body {
   body {
     font-size: 1.15rem;
   }
-
-  .section-title h4:before, .section-title h4:after {
-    left: 30px;
-  }
 }
