@@ -198,9 +198,35 @@ body {
   font-size: 16px;
 }
 
+.nav-masthead {
+  margin-top: 10px;
+}
+
+.head-logo {
+  height: 68px; 
+  margin-right: 9px;
+}
+
 /*Responsive*/
 @media(max-width:767.98px){
   body {
     font-size: 1.15rem;
+  }
+
+  .masthead-brand {
+    float: left;
+    margin-top: -10px;
+  }
+
+  .nav-masthead {
+    margin-top: 20px;
+  }
+
+  .section-title {
+    margin-bottom: 90px;
+  }
+
+  .head-logo {
+    margin-right: 3px;
   }
 }
