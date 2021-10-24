@@ -16,46 +16,10 @@
 
     <style>
       .pt-100{
-          padding-top:100px;
+        padding-top:100px;
       }
       .pb-100{
-          padding-bottom:100px;
-      }
-      .section-title {
-        margin-bottom: 60px;
-      }
-      .section-title p {
-        color: #777;
-        font-size: 16px;
-      }
-      .section-title h4 {
-        text-transform: capitalize;
-        font-size: 40px;
-        position: relative;
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-        font-weight: 600;
-      }
-      .section-title h4:before {
-        position: absolute;
-        content: "";
-        width: 60px;
-        height: 2px;
-        background-color: white;
-        bottom: 0;
-        left: 50%;
-        margin-left: -30px;
-      }
-      .section-title h4:after {
-        position: absolute;
-        background-color: white;
-        content: "";
-        width: 10px;
-        height: 10px;
-        bottom: -4px;
-        left: 50%;
-        margin-left: -5px;
-        border-radius: 50%;
+        padding-bottom:100px;
       }
       ul.timeline-list {
         position: relative;
@@ -109,7 +73,7 @@
         left: 50%;
         top: 50%;
         -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         border-radius: 50%;
       }
 
@@ -118,15 +82,61 @@
       }
 
       ul.timeline-list li.ongoing .timeline_content {
-          box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+        box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
       }
 
       ul.timeline-list li.incoming .timeline_content {
-          opacity:0.5;
+        opacity:0.5;
       }
 
       .progress-bar {
-          background-color: #000000 !important;
+        background-color: #000000 !important;
+      }
+
+      .completion-bar{
+        position: absolute;
+        width: 2px;
+        height: 42%;
+        background-color: white;
+        left: 50%;
+        top: 0;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+
+      /*Responsive*/
+      @media(max-width:767.98px){
+        ul.timeline-list:before {
+          left: 0%;
+        }
+
+        ul.timeline-list li:before {
+          left: 0%;
+        }
+
+        .completion-bar{
+          left: 0%;
+          height: 42.5%;
+        }
+
+        ul.timeline-list li .timeline_content {
+          width: 100%;
+          margin-bottom: 30px;
+          margin-left: 5px;
+          text-align: left;
+        }
+
+        ul.timeline-list li {
+          padding-left: 23px;;
+        }
+
+        ul.timeline-list li:nth-child(2n) .timeline_content {
+          float: none;
+        }
+
+        body {
+          font-size: 1.15rem;
+        }
       }
 
     </style>
@@ -137,7 +147,7 @@
         <div class="inner">
           <h3 class="masthead-brand"><img src="https://siasky.net/CABORnzkti2gV07WnnzFUAsmKMmgev3sq6yLf9ny4vevzA" style="height: 68px;"/> WRAITHS DAO</h3>
           <nav class="nav nav-masthead justify-content-center" style="margin-top: 10px;">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Wraiths</a>
             <a class="nav-link active" href="#">Roadmap</a>
             <a class="nav-link" href="faq.html">FAQ</a>
             <!--<a class="nav-link" href="https://metadex.wtf/" target="_blank">MetaDex</a>-->
@@ -148,11 +158,11 @@
         </div>
       </header>
 
-      <main role="main" class="inner cover pt-5 mb-5 mt-3 mt-lg-5">
+      <main role="main" class="inner cover pt-5 px-0 mb-5 mt-3 mt-lg-5">
         <section class="experience mb-5" id="experience">
           <div class="container">
             <div class="row">
-              <div class="col-xl-8 mx-auto text-center">
+              <div class="col-xl-8 mx-auto text-md-center">
                 <div class="section-title">
                   <h4>RoadMap</h4>
                   <p><em>Wraiths can see images of the past, the current or the future... ⩪</em></p>
@@ -166,7 +176,7 @@
                     <!-- Single Experience -->
                     <li>
                       <div class="timeline_content shadow-lg">
-                          <h4><del>Genesis Era I Drop</del> <span class="badge bg-dark" style="font-weight: 400;">✓ completed</span></h4>
+                          <h4><del>Genesis Era I Drop</del> <span class="badge bg-dark mt-2 mt-md-0" style="font-weight: 400;">✓ completed</span></h4>
                           <p class="mb-3">Era I is the genesis Wraiths drop of the DAO. It includes 4 original Wraiths (1x Executioner, 1x Necromancer, 1x Occultist, and 1x Dark Knight).</p>
                           <small class="text-muted"><em>4/4 Wraiths</em></small>
                           <div class="progress">
@@ -188,32 +198,25 @@
                     <!-- Single Experience -->
                     <li class="incoming">
                       <div class="timeline_content">
-                          <h4><img src="https://siasky.net/CADs3-ldpqnoSwv5bZspY1pCb2klGWdkBnaAQIBl8hkpaQ" style="max-width: 195px;" /> <span class="badge bg-dark" style="font-weight: 400;">Incoming</span></h4>
+                          <h4><img src="https://siasky.net/CADs3-ldpqnoSwv5bZspY1pCb2klGWdkBnaAQIBl8hkpaQ" style="max-width: 195px;" /> <span class="badge bg-dark mt-2 mt-md-0" style="font-weight: 400;">Incoming</span></h4>
                           <p>A MetaDex pass will be airdropped to all Era I and Era II Wraiths holders. This pass gives access to all premiums features on MetaDex.</p>
                       </div>
                     </li>
                     <!-- Single Experience -->
                     <li class="incoming">
                       <div class="timeline_content">
-                          <h4><img src="https://siasky.net/CAAn0CSMMNVfdK24bG88IB_30wnlrD5csvJxvbL6fNTxyQ" /> <span class="badge bg-dark" style="font-weight: 400;">Incoming</span></h4>
+                          <h4><img src="https://siasky.net/CAAn0CSMMNVfdK24bG88IB_30wnlrD5csvJxvbL6fNTxyQ" /> <span class="badge bg-dark mt-2 mt-md-0" style="font-weight: 400;">Incoming</span></h4>
                           <p>Built on top of the Wraiths NFTs (layer 1), Ethereal Sea integrates GameFi and DeFi mechanics. More information about the Sea will be released after the MetaDex drop.</p>
                       </div>
                     </li>
                     <!-- Single Experience -->
                     <li class="incoming">
-                      <div class="timeline_content">
+                      <div class="timeline_content mb-0">
                           <h4>Era III Drop <span class="badge bg-dark" style="font-weight: 400;">Incoming</span></h4>
                           <p>Era III is the third Wraiths drop of the DAO. It includes 8 original Wraiths (3x Executioner, 3x Necromancer, 3x Occultist, and 3x Dark Knight).</p>
                       </div>
                     </li>
-                    <div style="position: absolute;
-                      width: 2px;
-                      height: 42%;
-                      background-color: white;
-                      left: 50%;
-                      top: 0;
-                      -webkit-transform: translateX(-50%);
-                      transform: translateX(-50%);">
+                    <div class="completion-bar">
                     </div>
                 </ul>
               </div>
@@ -224,7 +227,7 @@
 
       <footer class="mastfoot mt-auto text-center pt-4 pt-lg-5">
         <div class="inner">
-          <p>These Wraiths behave in strange ways... ⩪ <a href="https://discord.gg/MVs6rYKkDS" target="_blank" class="text-muted">Discord</a> <a href="https://twitter.com/WraithsDAO" target="_blank" class="text-muted">Twitter</a> <a href="https://opensea.io/collection/wraiths" target="_blank" class="text-muted">OpenSea</a></p>
+          <p>Regardless of how they form, they are all different with their own realities... ⩪ <a href="https://discord.gg/MVs6rYKkDS" target="_blank" class="text-muted">Discord</a> <a href="https://twitter.com/WraithsDAO" target="_blank" class="text-muted">Twitter</a> <a href="https://opensea.io/collection/wraiths" target="_blank" class="text-muted">OpenSea</a></p>
         </div>
       </footer>
     </div>

@@ -161,3 +161,50 @@ body {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
 }
 
+.section-title h4 {
+  text-transform: capitalize;
+  font-size: 40px;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.section-title h4:before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+  margin-left: -30px;
+}
+.section-title h4:after {
+  position: absolute;
+  background-color: white;
+  content: "";
+  width: 10px;
+  height: 10px;
+  bottom: -4px;
+  left: 50%;
+  margin-left: -5px;
+  border-radius: 50%;
+}
+.section-title {
+  margin-bottom: 60px;
+}
+.section-title p {
+  color: #777;
+  font-size: 16px;
+}
+
+/*Responsive*/
+@media(max-width:767.98px){
+  body {
+    font-size: 1.15rem;
+  }
+
+  .section-title h4:before, .section-title h4:after {
+    left: 30px;
+  }
+}
